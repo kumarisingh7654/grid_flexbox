@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Layout Design Using Flexbox</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: "Arial";
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: palevioletred;
+      margin: 20px auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 1000px;
+      border: 1px solid #000;
+    }
+
+    .header, .footer {
+      width: 100%;
+      background-color: #F2A05D;
+      text-align: center;
+      padding: 10px;
+      margin: 4px;
+      height: 60px;
+    }
+
+    .content {
+      display: flex;
+      width: 100%;
+      height: 500px;
+      gap: 8px;
+    }
+
+    .left-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .menu, .ad2 {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .menu {
+      background-color: #F2E863; /* Light yellow for Menu */
+      height: 100%; /* Fill remaining height */
+    }
+
+    .ad2 {
+      background-color: #F25757; /* Red for Ad2 */
+      height: 100%; /* Fill remaining height */
+    }
+
+    .main {
+      flex: 2;
+      background-color: #61E8E1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      height: 100%;
+      text-align: center;
+    }
+
+    .ad1 {
+      flex: 1;
+      background-color: #F25757;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      height: 100%;
+      text-align: center;
+    }
+
+    /* Responsive design for medium screens */
+    @media screen and (max-width: 850px) {
+      .content {
+        flex-direction: column;
+        height: auto;
+        gap: 8px;
+      }
+
+      .left-column, .main, .ad1 {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Responsive design for small screens */
+    @media screen and (max-width: 500px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .main, .ad1 {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="header">Header</div>
+    <div class="content">
+      <div class="left-column">
+        <div class="menu">Menu</div>
+        <div class="ad2">Ad2</div>
+      </div>
+      <div class="main">Main</div>
+      <div class="ad1">Ad1</div>
+    </div>
+    <div class="footer">Footer</div>
+  </div>
+</body>
+</html>
